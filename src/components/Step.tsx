@@ -13,6 +13,7 @@ interface Props {
   active?: boolean
   maskOffset?: number
   borderRadius?: number
+  children: React.ReactNode
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   borderRadiusObject?: BorderRadiusObject
