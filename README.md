@@ -1,3 +1,7 @@
+Forked this project to implement additional features/bug fixes.
+
+- title and content prop to show in tooltip (step)
+
 <h1 align="center">RN-TourGuide</h1>
 
 <p align="center">
@@ -169,7 +173,9 @@ const AppContent = () => {
 interface TourGuideZoneProps {
   zone: number // A positive number indicating the order of the step in the entire walkthrough.
   isTourGuide?: boolean // return children without wrapping id false
+  title?: string
   text?: string // text in tooltip
+  content?: any
   shape?: Shape // which shape
   maskOffset?: number // offset around zone
   borderRadius?: number // round corner when rectangle

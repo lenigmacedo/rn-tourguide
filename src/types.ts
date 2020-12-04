@@ -9,6 +9,7 @@ export interface IStep {
   order: number
   visible?: boolean
   target: any
+  title?: string
   text: string
   wrapper: any
   shape?: Shape

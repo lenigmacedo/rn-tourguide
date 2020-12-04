@@ -1,5 +1,5 @@
 {
-  "name": "rn-tourguide",
+  "name": "@cookiespam/rn-tourguide",
   "version": "2.7.1",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
   "main": "node_modules/expo/AppEntry.js",

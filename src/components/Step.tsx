@@ -6,12 +6,13 @@ import { TourGuideContext } from './TourGuideContext'
 interface Props {
   name: string
   order: number
+  title?: string
   text: string
+  content?: any
   shape?: Shape
   active?: boolean
   maskOffset?: number
   borderRadius?: number
-  children: React.ReactNode
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   borderRadiusObject?: BorderRadiusObject
