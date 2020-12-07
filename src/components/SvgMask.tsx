@@ -142,7 +142,7 @@ export class SvgMask extends Component<Props, State> {
     if (this.state.opacity._value !== 1) {
       animations.push(
         Animated.timing(this.state.opacity, {
-          toValue: 0.5,
+          toValue: 1,
           duration: this.props.animationDuration,
           easing: this.props.easing,
           useNativeDriver: true,
