@@ -28,8 +28,6 @@ interface Props {
   gradient?: string[]
   opacity?: number
   easing?(value: number): number
-  gradient?: string[]
-  opacity?: number
 }
 
 interface State {
