@@ -32,6 +32,8 @@ export interface ModalProps {
   androidStatusBarVisible: boolean
   backdropColor: string
   labels: Labels
+  gradient?: string[]
+  opacity?: number
   easing(value: number): number
   stop(): void
   next(): void
@@ -267,6 +269,8 @@ export class Modal extends React.Component<ModalProps, State> {
       backdropColor={this.props.backdropColor}
       currentStep={this.props.currentStep}
       maskOffset={this.props.maskOffset}
+      gradient={this.props.gradient}
+      opacity={this.props.opacity}
       borderRadius={this.props.borderRadius}
     />
   )

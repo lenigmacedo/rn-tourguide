@@ -1,6 +1,6 @@
 {
   "name": "@cookiespam/rn-tourguide",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "description": "Make an interactive step by step tour guide for your react-native app (a rewrite of react-native-copilot)",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
@@ -57,7 +57,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
-    "react-native-svg": "11.0.1",
+    "react-native-svg": "^12.1.0",
     "react-native-web": "0.12.2",
     "react-test-renderer": ">=16.8.0",
     "tslint": "^5.20.1",
