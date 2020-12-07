@@ -2,7 +2,10 @@ Forked this project to implement additional features/bug fixes.
 
 - title and content prop to show in tooltip (step)
 - gradient and opacity prop for svg mask
+<<<<<<< HEAD
 - disableMaskInput prop to disable touches outside of tooltip
+=======
+>>>>>>> f43d75a6dc5813324ebaa670fd2cd24463dfbd67
 
 <h1 align="center">RN-TourGuide</h1>
 
@@ -185,6 +188,8 @@ interface TourGuideZoneProps {
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   disableMaskInput:? boolean
+  gradient?: string[] // array of colors
+  opacity?: number
   children: React.ReactNode
 }
 

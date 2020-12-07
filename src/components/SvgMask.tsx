@@ -28,6 +28,8 @@ interface Props {
   gradient?: string[]
   opacity?: number
   easing?(value: number): number
+  gradient?: string[]
+  opacity?: number
 }
 
 interface State {
@@ -37,6 +39,7 @@ interface State {
   animation: Animated.Value
   canvasSize: ValueXY
   previousPath: string
+  gradient?: string[]
 }
 
 const FIRST_PATH = `M0,0H${screenDimensions.width}V${
@@ -67,13 +70,13 @@ export class SvgMask extends Component<Props, State> {
         x: screenDimensions.width,
         y: screenDimensions.height,
       },
+      gradient: props.gradient,
       size: props.size,
       position: props.position,
       opacity: new Animated.Value(0),
       animation: new Animated.Value(0),
       previousPath: FIRST_PATH,
     }
-
     this.listenerID = this.state.animation.addListener(this.animationListener)
   }
 
@@ -141,7 +144,7 @@ export class SvgMask extends Component<Props, State> {
     if (this.state.opacity._value !== 1) {
       animations.push(
         Animated.timing(this.state.opacity, {
-          toValue: 1,
+          toValue: 0.5,
           duration: this.props.animationDuration,
           easing: this.props.easing,
           useNativeDriver: true,

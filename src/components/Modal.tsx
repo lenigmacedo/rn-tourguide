@@ -272,6 +272,8 @@ export class Modal extends React.Component<ModalProps, State> {
       backdropColor={this.props.backdropColor}
       currentStep={this.props.currentStep}
       maskOffset={this.props.maskOffset}
+      gradient={this.props.gradient}
+      opacity={this.props.opacity}
       borderRadius={this.props.borderRadius}
     />
   )
