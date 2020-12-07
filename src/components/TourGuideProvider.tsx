@@ -29,6 +29,9 @@ export interface TourGuideProviderProps {
   maskOffset?: number
   borderRadius?: number
   animationDuration?: number
+  gradient?: string[]
+  opacity?: number
+  disableMaskInput?: boolean
   children: React.ReactNode
 }
 
@@ -44,6 +47,9 @@ export const TourGuideProvider = ({
   maskOffset,
   borderRadius,
   verticalOffset,
+  gradient,
+  opacity,
+  disableMaskInput,
   startAtMount = false,
 }: TourGuideProviderProps) => {
   const [visible, setVisible] = useState<boolean | undefined>(undefined)
@@ -171,7 +177,8 @@ export const TourGuideProvider = ({
   }
 
   return (
-    <View style={[styles.container, wrapperStyle]}>
+    <View style={[styles.container, wrapperStyle]} 
+    >
       <TourGuideContext.Provider
         value={{
           eventEmitter,
@@ -202,6 +209,9 @@ export const TourGuideProvider = ({
             animationDuration,
             maskOffset,
             borderRadius,
+            gradient,
+            opacity,
+            disableMaskInput
           }}
         />
       </TourGuideContext.Provider>

@@ -21,7 +21,7 @@ const uri =
 // Add <TourGuideProvider/> at the root of you app!
 function App() {
   return (
-    <TourGuideProvider {...{ borderRadius: 16 }}>
+    <TourGuideProvider {...{ borderRadius: 16 }} gradient={['#00C08F', '#00B3D3']} opacity={0.5} disableMaskInput>
       <AppContent />
     </TourGuideProvider>
   )

@@ -9,7 +9,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import Svg, { PathProps } from 'react-native-svg'
+import Svg, { PathProps, Defs, LinearGradient, Stop } from 'react-native-svg'
 import { IStep, ValueXY } from '../types'
 import { svgMaskPathMorph } from '../utilities'
 import { AnimatedSvgPath } from './AnimatedPath'
@@ -25,6 +25,8 @@ interface Props {
   maskOffset?: number
   borderRadius?: number
   currentStep?: IStep
+  gradient?: string[]
+  opacity?: number
   easing?(value: number): number
 }
 
@@ -186,13 +188,29 @@ export class SvgMask extends Component<Props, State> {
           width={this.state.canvasSize.x}
           height={this.state.canvasSize.y}
         >
+          {this.props.gradient && (
+            <Defs>
+              <LinearGradient id='grad' x1='0' y1='0' x2='1' y2='1'>
+                {this.props.gradient.map((grad, index) => {
+                  return (
+                    <Stop
+                      key={index}
+                      offset={index}
+                      stopColor={grad}
+                      stopOpacity={Number(this.props.opacity) || 1}
+                    />
+                  )
+                })}
+              </LinearGradient>
+            </Defs>
+          )}
           <AnimatedSvgPath
             ref={this.mask}
-            fill={this.props.backdropColor}
+            fill={this.props.gradient ? 'url(#grad)' : this.props.backdropColor }
             strokeWidth={0}
             fillRule='evenodd'
             d={FIRST_PATH}
-            opacity={this.state.opacity as any}
+            {...!this.props.gradient && {opacity: this.state.opacity as any} }
           />
         </Svg>
       </View>

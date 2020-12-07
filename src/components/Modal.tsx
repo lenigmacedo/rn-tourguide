@@ -32,6 +32,9 @@ export interface ModalProps {
   androidStatusBarVisible: boolean
   backdropColor: string
   labels: Labels
+  gradient?: string[]
+  opacity?: number
+  disableMaskInput?: boolean
   easing(value: number): number
   stop(): void
   next(): void
@@ -262,6 +265,8 @@ export class Modal extends React.Component<ModalProps, State> {
       style={styles.overlayContainer}
       size={this.state.size!}
       position={this.state.position!}
+      gradient={this.props.gradient}
+      opacity={this.props.opacity}
       easing={this.props.easing}
       animationDuration={this.props.animationDuration}
       backdropColor={this.props.backdropColor}
@@ -281,7 +286,7 @@ export class Modal extends React.Component<ModalProps, State> {
     const { opacity } = this.state
     return (
       <Animated.View
-        pointerEvents='box-none'
+        pointerEvents='auto'
         key='tooltip'
         style={[
           styles.tooltip,
@@ -314,12 +319,12 @@ export class Modal extends React.Component<ModalProps, State> {
     return (
       <View
         style={[StyleSheet.absoluteFill, { backgroundColor: 'transparent' }]}
-        pointerEvents='box-none'
+        pointerEvents={this.props.disableMaskInput ? 'auto' : 'box-none'}
       >
         <View
           style={styles.container}
           onLayout={this.handleLayoutChange}
-          pointerEvents='box-none'
+          pointerEvents={this.props.disableMaskInput ? 'auto' : 'box-none'}
         >
           {contentVisible && (
             <>
