@@ -56,7 +56,6 @@ export const TourGuideZoneByPosition = ({
           text,
         }}
         style={{
-          position: 'absolute',
           height,
           width,
           top,
