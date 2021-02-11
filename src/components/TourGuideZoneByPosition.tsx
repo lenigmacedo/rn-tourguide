@@ -18,6 +18,7 @@ interface TourGuideZoneByPositionProps {
   keepTooltipPosition?: boolean
   tooltipBottomOffset?: number
   text?: string
+  maskOffset?: number
 }
 
 export const TourGuideZoneByPosition = ({
@@ -35,6 +36,7 @@ export const TourGuideZoneByPosition = ({
   tooltipBottomOffset,
   borderRadiusObject,
   text,
+  maskOffset
 }: TourGuideZoneByPositionProps) => {
   if (!isTourGuide) {
     return null
@@ -54,6 +56,7 @@ export const TourGuideZoneByPosition = ({
           tooltipBottomOffset,
           borderRadiusObject,
           text,
+          maskOffset
         }}
         style={{
           height,
