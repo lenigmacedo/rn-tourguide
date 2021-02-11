@@ -8,6 +8,7 @@ export interface TourGuideZoneProps {
   zone: number
   isTourGuide?: boolean
   title?: string
+  place?: string
   text?: string
   content?: any
   shape?: Shape
@@ -33,7 +34,8 @@ export const TourGuideZone = ({
   keepTooltipPosition,
   tooltipBottomOffset,
   borderRadiusObject,
-  content
+  content,
+  place
 }: TourGuideZoneProps) => {
   if (!isTourGuide) {
     return <>{children}</>
@@ -46,6 +48,7 @@ export const TourGuideZone = ({
       content={content ?? {}}
       order={zone}
       name={`${zone}`}
+      place={`${place}`}
       {...{
         shape,
         maskOffset,
