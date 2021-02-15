@@ -66,7 +66,10 @@ export const TourGuideProvider = ({
 
   useEffect(() => {
     if (mounted && visible === false) {
-      eventEmitter.emit('stop')
+
+      const step = getLastStep()
+
+      eventEmitter.emit('stop', step?.order)
     }
   }, [visible])
 
@@ -177,7 +180,7 @@ export const TourGuideProvider = ({
   }
 
   return (
-    <View style={[styles.container, wrapperStyle]} 
+    <View style={[styles.container, wrapperStyle]}
     >
       <TourGuideContext.Provider
         value={{
